@@ -2,22 +2,22 @@ export const standard = defineScenario({
   team: {
     one: {
       data: {
-        tournament: {
+        match: {
           create: {
             name: "String",
-            startDate: "2023-08-12T12:39:36.160Z",
-            endDate: "2023-08-12T12:39:36.160Z",
+            startDate: "2023-08-13T11:59:19.295Z",
+            endDate: "2023-08-13T11:59:19.295Z",
           },
         },
       },
     },
     two: {
       data: {
-        tournament: {
+        match: {
           create: {
             name: "String",
-            startDate: "2023-08-12T12:39:36.161Z",
-            endDate: "2023-08-12T12:39:36.161Z",
+            startDate: "2023-08-13T11:59:19.295Z",
+            endDate: "2023-08-13T11:59:19.295Z",
           },
         },
       },

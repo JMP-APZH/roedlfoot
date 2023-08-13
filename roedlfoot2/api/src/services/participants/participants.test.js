@@ -28,15 +28,15 @@ describe("participants", () => {
   scenario("creates a participant", async (scenario) => {
     const result = await createParticipant({
       input: {
-        userId: scenario.participant.two.userId,
-        tournamentId: scenario.participant.two.tournamentId,
+        userId: 1942801,
         teamId: scenario.participant.two.teamId,
+        matchId: scenario.participant.two.matchId,
       },
     });
 
-    expect(result.userId).toEqual(scenario.participant.two.userId);
-    expect(result.tournamentId).toEqual(scenario.participant.two.tournamentId);
+    expect(result.userId).toEqual(1942801);
     expect(result.teamId).toEqual(scenario.participant.two.teamId);
+    expect(result.matchId).toEqual(scenario.participant.two.matchId);
   });
 
   scenario("updates a participant", async (scenario) => {
@@ -45,10 +45,10 @@ describe("participants", () => {
     });
     const result = await updateParticipant({
       id: original.id,
-      input: { tournamentId: scenario.participant.two.userId },
+      input: { userId: 6640381 },
     });
 
-    expect(result.tournamentId).toEqual(scenario.participant.two.userId);
+    expect(result.userId).toEqual(6640381);
   });
 
   scenario("deletes a participant", async (scenario) => {

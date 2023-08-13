@@ -21,20 +21,20 @@ describe("teams", () => {
 
   scenario("creates a team", async (scenario) => {
     const result = await createTeam({
-      input: { tournamentId: scenario.team.two.tournamentId },
+      input: { matchId: scenario.team.two.matchId },
     });
 
-    expect(result.tournamentId).toEqual(scenario.team.two.tournamentId);
+    expect(result.matchId).toEqual(scenario.team.two.matchId);
   });
 
   scenario("updates a team", async (scenario) => {
     const original = await team({ id: scenario.team.one.id });
     const result = await updateTeam({
       id: original.id,
-      input: { tournamentId: scenario.team.two.tournamentId },
+      input: { matchId: scenario.team.two.matchId },
     });
 
-    expect(result.tournamentId).toEqual(scenario.team.two.tournamentId);
+    expect(result.matchId).toEqual(scenario.team.two.matchId);
   });
 
   scenario("deletes a team", async (scenario) => {

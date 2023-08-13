@@ -8,15 +8,6 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-// model UserExample {
-//   id    Int     @id @default(autoincrement())
-//   email String  @unique
-//   name  String?
-// }
-
 model User {
   id             Int           @id @default(autoincrement())
   username       String        @unique
@@ -25,100 +16,58 @@ model User {
   hashedPassword String?
   salt           String?
   refreshToken   String?
-  tournamentsA   Participant[] @relation("TournamentsATeamA")
-  tournamentsB   Participant[] @relation("TournamentsBTeamB")
-  tournamentId   Int?
+  // tournamentsA   Participant[] @relation("TournamentsATeamA")
+  // tournamentsB   Participant[] @relation("TournamentsBTeamB")
+  // tournamentId   Int?
   Team           Team?         @relation(fields: [teamId], references: [id])
   teamId         Int?
   // Participant    Participant[]
 }
 
 // Define the Tournament model
-model Tournament {
-  id          Int           @id @default(autoincrement())
-  name        String
-  startDate   DateTime
-  endDate     DateTime
-  teams       Team[]
-  Participant Participant[]
-}
+// model Tournament {
+//   id          Int           @id @default(autoincrement())
+//   name        String
+//   startDate   DateTime
+//   endDate     DateTime
+//   teams       Team[]
+//   Participant Participant[]
+// }
 
 // Define the Team model for the tournament teams
 model Team {
   id           Int           @id @default(autoincrement())
-  tournament   Tournament    @relation(fields: [tournamentId], references: [id])
-  tournamentId Int
+  // tournament   Tournament    @relation(fields: [tournamentId], references: [id])
+  // tournamentId Int
   players      User[] // Players in the team
   score        Int           @default(0)
-  Participant  Participant[]
+  participants Participant[]
+
+  match   Match @relation(fields: [matchId], references: [id])
+  matchId Int
 }
 
 // Define the Participant model for keeping track of user-team associations
 model Participant {
   id           Int        @id @default(autoincrement())
   // user         User       @relation(fields: [userId], references: [id])
-  tournament   Tournament @relation(fields: [tournamentId], references: [id])
+  // tournament   Tournament @relation(fields: [tournamentId], references: [id])
   team         Team       @relation(fields: [teamId], references: [id])
   userId       Int
-  tournamentId Int
+  // tournamentId Int
   teamId       Int
-  teamA        User?      @relation("TournamentsATeamA", fields: [userId], references: [id], map: "teamA_user")
-  teamB        User?      @relation("TournamentsBTeamB", fields: [userId], references: [id], map: "teamB_user")
+  // teamA        User?      @relation("TournamentsATeamA", fields: [userId], references: [id], map: "teamA_user")
+  // teamB        User?      @relation("TournamentsBTeamB", fields: [userId], references: [id], map: "teamB_user")
+
+  match   Match @relation(fields: [matchId], references: [id])
+  matchId Int
 }
 
-// model User {
-//   id       Int    @id @default(autoincrement())
-//   nickname String
-//   email    String @unique
-//   avatar   String
-//   scoreind Int
-//   scoregrp Int
-
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-
-//   matchesind Match[] @relation(["User1PlayedMatch", "User2PlayedMatch"])
-
-//   matchesgrp Match[] @relation(["User1PlayedMatch", "User2PlayedMatch", "User3PlayedMatch", "User4PlayedMatch"])
-
-//   hashedPassword      String
-//   salt                String
-//   resetToken          String?
-//   resetTokenExpiresAt DateTime?
-// }
-
-// model Matchind {
-//   id      Int    @id @default(autoincrement())
-//   user1   User   @relation("User1PlayedMatch", fields: [user1Id], references: [id])
-//   user1Id Int    @unique
-//   user2   User   @relation("User2PlayedMatch", fields: [user2Id], references: [id])
-//   user2Id Int    @unique
-//   // player1 String
-//   // player2 String
-
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-// }
-
-// model Matchgrp {
-//   id      Int  @id @default(autoincrement())
-
-//   user1   User @relation("User1PlayedMatch", fields: [user1Id], references: [id])
-//   user1Id Int  @unique
-//   user2   User @relation("User2PlayedMatch", fields: [user2Id], references: [id])
-//   user2Id Int  @unique
-
-//   user3   User @relation("User1PlayedMatch", fields: [user3Id], references: [id])
-//   user3Id Int  @unique
-//   user4   User @relation("User2PlayedMatch", fields: [user4Id], references: [id])
-//   user4Id Int  @unique
-
-//   // player1 String
-//   // player2 String
-
-//   // player3 String
-//   // player4 String
-
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-// }
+model Match {
+  id           Int           @id @default(autoincrement())
+  name         String
+  startDate    DateTime
+  endDate      DateTime
+  participants Participant[]
+  Team         Team[]
+}

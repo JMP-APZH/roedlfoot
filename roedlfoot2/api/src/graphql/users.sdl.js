@@ -7,9 +7,6 @@ export const schema = gql`
     hashedPassword: String
     salt: String
     refreshToken: String
-    tournamentsA: [Participant]!
-    tournamentsB: [Participant]!
-    tournamentId: Int
     Team: Team
     teamId: Int
   }
@@ -26,7 +23,6 @@ export const schema = gql`
     hashedPassword: String
     salt: String
     refreshToken: String
-    tournamentId: Int
     teamId: Int
   }
 
@@ -37,7 +33,6 @@ export const schema = gql`
     hashedPassword: String
     salt: String
     refreshToken: String
-    tournamentId: Int
     teamId: Int
   }
 

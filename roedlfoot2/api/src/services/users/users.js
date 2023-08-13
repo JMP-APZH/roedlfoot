@@ -30,12 +30,6 @@ export const deleteUser = ({ id }) => {
 };
 
 export const User = {
-  tournamentsA: (_obj, { root }) => {
-    return db.user.findUnique({ where: { id: root?.id } }).tournamentsA();
-  },
-  tournamentsB: (_obj, { root }) => {
-    return db.user.findUnique({ where: { id: root?.id } }).tournamentsB();
-  },
   Team: (_obj, { root }) => {
     return db.user.findUnique({ where: { id: root?.id } }).Team();
   },

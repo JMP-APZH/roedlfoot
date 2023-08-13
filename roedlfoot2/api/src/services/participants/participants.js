@@ -30,16 +30,10 @@ export const deleteParticipant = ({ id }) => {
 };
 
 export const Participant = {
-  tournament: (_obj, { root }) => {
-    return db.participant.findUnique({ where: { id: root?.id } }).tournament();
-  },
   team: (_obj, { root }) => {
     return db.participant.findUnique({ where: { id: root?.id } }).team();
   },
-  teamA: (_obj, { root }) => {
-    return db.participant.findUnique({ where: { id: root?.id } }).teamA();
-  },
-  teamB: (_obj, { root }) => {
-    return db.participant.findUnique({ where: { id: root?.id } }).teamB();
+  match: (_obj, { root }) => {
+    return db.participant.findUnique({ where: { id: root?.id } }).match();
   },
 };

@@ -1,11 +1,11 @@
 export const schema = gql`
   type Team {
     id: Int!
-    tournament: Tournament!
-    tournamentId: Int!
     players: [User]!
     score: Int!
-    Participant: [Participant]!
+    participants: [Participant]!
+    match: Match!
+    matchId: Int!
   }
 
   type Query {
@@ -14,13 +14,13 @@ export const schema = gql`
   }
 
   input CreateTeamInput {
-    tournamentId: Int!
     score: Int!
+    matchId: Int!
   }
 
   input UpdateTeamInput {
-    tournamentId: Int
     score: Int
+    matchId: Int
   }
 
   type Mutation {

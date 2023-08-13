@@ -21,20 +21,20 @@ describe("users", () => {
 
   scenario("creates a user", async () => {
     const result = await createUser({
-      input: { username: "String7991274" },
+      input: { username: "String7075757" },
     });
 
-    expect(result.username).toEqual("String7991274");
+    expect(result.username).toEqual("String7075757");
   });
 
   scenario("updates a user", async (scenario) => {
     const original = await user({ id: scenario.user.one.id });
     const result = await updateUser({
       id: original.id,
-      input: { username: "String66033902" },
+      input: { username: "String44613512" },
     });
 
-    expect(result.username).toEqual("String66033902");
+    expect(result.username).toEqual("String44613512");
   });
 
   scenario("deletes a user", async (scenario) => {

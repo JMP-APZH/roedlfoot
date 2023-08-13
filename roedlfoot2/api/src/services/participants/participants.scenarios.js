@@ -2,44 +2,46 @@ export const standard = defineScenario({
   participant: {
     one: {
       data: {
-        tournament: {
-          create: {
-            name: "String",
-            startDate: "2023-08-12T12:39:55.699Z",
-            endDate: "2023-08-12T12:39:55.699Z",
-          },
-        },
+        userId: 9381435,
         team: {
           create: {
-            tournament: {
+            match: {
               create: {
                 name: "String",
-                startDate: "2023-08-12T12:39:55.699Z",
-                endDate: "2023-08-12T12:39:55.699Z",
+                startDate: "2023-08-13T11:59:58.974Z",
+                endDate: "2023-08-13T11:59:58.974Z",
               },
             },
+          },
+        },
+        match: {
+          create: {
+            name: "String",
+            startDate: "2023-08-13T11:59:58.974Z",
+            endDate: "2023-08-13T11:59:58.974Z",
           },
         },
       },
     },
     two: {
       data: {
-        tournament: {
-          create: {
-            name: "String",
-            startDate: "2023-08-12T12:39:55.699Z",
-            endDate: "2023-08-12T12:39:55.699Z",
-          },
-        },
+        userId: 2625009,
         team: {
           create: {
-            tournament: {
+            match: {
               create: {
                 name: "String",
-                startDate: "2023-08-12T12:39:55.699Z",
-                endDate: "2023-08-12T12:39:55.699Z",
+                startDate: "2023-08-13T11:59:58.974Z",
+                endDate: "2023-08-13T11:59:58.974Z",
               },
             },
+          },
+        },
+        match: {
+          create: {
+            name: "String",
+            startDate: "2023-08-13T11:59:58.974Z",
+            endDate: "2023-08-13T11:59:58.974Z",
           },
         },
       },
