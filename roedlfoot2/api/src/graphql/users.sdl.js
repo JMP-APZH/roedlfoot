@@ -2,13 +2,14 @@ export const schema = gql`
   type User {
     id: Int!
     username: String!
-    fullName: String!
-    email: String!
+    fullName: String
+    email: String
     hashedPassword: String
+    salt: String
     refreshToken: String
     tournamentsA: [Participant]!
     tournamentsB: [Participant]!
-    tournamentId: Int!
+    tournamentId: Int
     Team: Team
     teamId: Int
   }
@@ -20,11 +21,12 @@ export const schema = gql`
 
   input CreateUserInput {
     username: String!
-    fullName: String!
-    email: String!
+    fullName: String
+    email: String
     hashedPassword: String
+    salt: String
     refreshToken: String
-    tournamentId: Int!
+    tournamentId: Int
     teamId: Int
   }
 
@@ -33,6 +35,7 @@ export const schema = gql`
     fullName: String
     email: String
     hashedPassword: String
+    salt: String
     refreshToken: String
     tournamentId: Int
     teamId: Int

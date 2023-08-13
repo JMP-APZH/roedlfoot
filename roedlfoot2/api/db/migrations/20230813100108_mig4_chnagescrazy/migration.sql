@@ -2,11 +2,12 @@
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
-    "fullName" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
+    "fullName" TEXT,
+    "email" TEXT,
     "hashedPassword" TEXT,
+    "salt" TEXT,
     "refreshToken" TEXT,
-    "tournamentId" INTEGER NOT NULL,
+    "tournamentId" INTEGER,
     "teamId" INTEGER,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")

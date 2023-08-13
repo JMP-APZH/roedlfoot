@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import { createValidatorDirective } from '@redwoodjs/graphql-server'
+import { createTransformerDirective, createValidatorDirective } from '@redwoodjs/graphql-server'
 
 import { requireAuth as applicationRequireAuth } from 'src/lib/auth'
 
@@ -18,5 +18,7 @@ const validate = ({ directiveArgs }) => {
 }
 
 const requireAuth = createValidatorDirective(schema, validate)
+
+// const requireAuth = createTransformerDirective(schema, validate)
 
 export default requireAuth
