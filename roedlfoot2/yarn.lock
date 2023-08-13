@@ -17322,59 +17322,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "prettier-plugin-tailwindcss@npm:0.5.1"
-  peerDependencies:
-    "@ianvs/prettier-plugin-sort-imports": "*"
-    "@prettier/plugin-pug": "*"
-    "@shopify/prettier-plugin-liquid": "*"
-    "@shufo/prettier-plugin-blade": "*"
-    "@trivago/prettier-plugin-sort-imports": "*"
-    prettier: ^3.0
-    prettier-plugin-astro: "*"
-    prettier-plugin-css-order: "*"
-    prettier-plugin-import-sort: "*"
-    prettier-plugin-jsdoc: "*"
-    prettier-plugin-organize-attributes: "*"
-    prettier-plugin-organize-imports: "*"
-    prettier-plugin-style-order: "*"
-    prettier-plugin-svelte: "*"
-  peerDependenciesMeta:
-    "@ianvs/prettier-plugin-sort-imports":
-      optional: true
-    "@prettier/plugin-pug":
-      optional: true
-    "@shopify/prettier-plugin-liquid":
-      optional: true
-    "@shufo/prettier-plugin-blade":
-      optional: true
-    "@trivago/prettier-plugin-sort-imports":
-      optional: true
-    prettier-plugin-astro:
-      optional: true
-    prettier-plugin-css-order:
-      optional: true
-    prettier-plugin-import-sort:
-      optional: true
-    prettier-plugin-jsdoc:
-      optional: true
-    prettier-plugin-marko:
-      optional: true
-    prettier-plugin-organize-attributes:
-      optional: true
-    prettier-plugin-organize-imports:
-      optional: true
-    prettier-plugin-style-order:
-      optional: true
-    prettier-plugin-svelte:
-      optional: true
-    prettier-plugin-twig-melody:
-      optional: true
-  checksum: 2899753545068c08717b8fc2b08f2f1bc1ed106ae15fd83be37f5990ea507f251dc788b3e89f321b187eff34e9d85e9047a2b614b33e8bcd5485a4f8c853a0c7
-  languageName: node
-  linkType: hard
-
 "prettier@npm:*":
   version: 3.0.1
   resolution: "prettier@npm:3.0.1"
@@ -18482,7 +18429,6 @@ __metadata:
     "@redwoodjs/auth-dbauth-setup": 6.0.6
     "@redwoodjs/core": 6.0.6
     "@types/prettier": ^3.0.0
-    prettier-plugin-tailwindcss: ^0.5.1
   languageName: unknown
   linkType: soft
 
